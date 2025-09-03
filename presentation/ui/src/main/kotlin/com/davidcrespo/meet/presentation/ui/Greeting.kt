@@ -22,7 +22,7 @@ fun Greeting(name: String) {
 @Preview()
 @Composable
 fun GreetingPreview() {
-        Text(
-            text = "Hello!"
-        )
+    Text(
+        text = "Hello!"
+    )
 }

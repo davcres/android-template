@@ -28,11 +28,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "21"
     }
     buildFeatures {
         compose = true
@@ -42,19 +42,24 @@ android {
 dependencies {
     implementation(projects.presentation.ui)
 
+//    implementation(libs.koin.android)  // Koin for Android
+//    implementation(libs.koin.androidx.viewmodel) // Koin for viewmodel feature
+
+    // Core
     implementation(libs.androidx.core.ktx)
+
+    // Lifecycle
     implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
+
+    // Jetpack Compose
     implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.bundles.compose)
     debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
+
+    // Testing
+    testImplementation(libs.junit) // Unit testing
+    androidTestImplementation(libs.androidx.junit) // Instrumented testing (on device)
+    androidTestImplementation(libs.androidx.ui.test.junit4) // Compose testing
+    debugImplementation(libs.androidx.ui.test.manifest) // Compose testing (create a mock manifest to run tests in debug)
 }
