@@ -33,7 +33,7 @@ fun Shadow(modifier: Modifier = Modifier) {
         val shape = RoundedCornerShape(50.dp)
 
         Box(
-            modifier = modifier
+            modifier = Modifier
                 .dropShadow(shape = shape) {
                     radius = 60f
                     // color = Color.Red
@@ -48,7 +48,7 @@ fun Shadow(modifier: Modifier = Modifier) {
                         colors = listOf(Color.Yellow, Color.Cyan)
                     ),
                 )
-                .size(300.dp)
+                .size(100.dp)
                 .background(
                     color = Color.Black,
                     shape = shape,
@@ -64,7 +64,7 @@ fun Shadow(modifier: Modifier = Modifier) {
         )
 
         Box(
-            modifier = modifier
+            modifier = Modifier
                 .dropShadow(shape = shape) {
                     radius = 50f
                     brush = Brush.verticalGradient(
@@ -78,7 +78,7 @@ fun Shadow(modifier: Modifier = Modifier) {
                         colors = listOf(White, Color.Black.copy(alpha = .3f))
                     ),
                 )
-                .size(300.dp)
+                .size(100.dp)
                 .background(
                     color = Color.Gray,
                     shape = shape,
