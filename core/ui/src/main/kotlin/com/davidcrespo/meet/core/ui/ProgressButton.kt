@@ -58,7 +58,6 @@ fun ProgressButton(
                 )
                 val buttonShapePath = Path().apply { addOutline(outline) }
 
-
                 clipPath(buttonShapePath) {
                     drawRect(
                         color = color,

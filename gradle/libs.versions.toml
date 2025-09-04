@@ -36,7 +36,7 @@ koin-core-android = { module = "io.insert-koin:koin-android", version.ref = "koi
 
 [bundles]
 compose = [
-    "androidx-activity-compose",
+    "androidx-activity-compose", # TODO*** try to put only in app module
     "androidx-compose-material3",
     "androidx-ui",
     "androidx-ui-graphics",
