@@ -33,7 +33,15 @@ android {
 }
 
 dependencies {
+    implementation(projects.core.common)
+
+    // Core
     implementation(libs.androidx.core.ktx)
+
+    // Koin
+    implementation(libs.koin.core)
+
+    // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
 }

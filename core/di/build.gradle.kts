@@ -34,6 +34,10 @@ android {
 
 dependencies {
     implementation(projects.core.common)
+    implementation(projects.data.datasource)
+    implementation(projects.data.repository)
+    implementation(projects.domain.usecases)
+    implementation(projects.presentation.viewmodels)
 
     // Core
     implementation(libs.androidx.core.ktx)
