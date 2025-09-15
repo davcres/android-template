@@ -38,6 +38,7 @@ android {
 
 dependencies {
     implementation(projects.core.ui)
+    implementation(projects.domain.models)
 
     // Core
     implementation(libs.androidx.core.ktx)

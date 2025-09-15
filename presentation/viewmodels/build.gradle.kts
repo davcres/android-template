@@ -34,6 +34,7 @@ android {
 
 dependencies {
     implementation(projects.core.common)
+    implementation(projects.domain.models)
 
     // Core
     implementation(libs.androidx.core.ktx)
