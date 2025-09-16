@@ -18,7 +18,6 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = true
-            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -39,10 +38,16 @@ android {
 
 dependencies {
     implementation(projects.core.ui)
+    implementation(projects.core.common)
     implementation(projects.domain.models)
+    implementation(projects.presentation.viewmodels)
 
     // Core
     implementation(libs.androidx.core.ktx)
+
+    // Koin
+    implementation(libs.koin.core)
+    implementation(libs.koin.compose.viewmodel)
 
     // Jetpack Compose
     implementation(platform(libs.androidx.compose.bom))

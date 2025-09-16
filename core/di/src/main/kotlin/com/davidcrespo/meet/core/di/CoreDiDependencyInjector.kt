@@ -4,6 +4,7 @@ import com.davidcrespo.domain.usecases.di.UseCaseDependencyInjector
 import com.davidcrespo.meet.core.common.di.KoinModuleLoader
 import com.davidcrespo.meet.data.datasource.di.DataSourceDependencyInjector
 import com.davidcrespo.meet.data.repository.di.RepositoryDependencyInjector
+import com.davidcrespo.meet.presentation.ui.di.UiDependencyInjector
 import com.davidcrespo.meet.presentation.viewmodels.di.ViewModelDependencyInjector
 import org.koin.core.module.Module
 
@@ -14,5 +15,6 @@ object CoreDiDependencyInjector : KoinModuleLoader {
             RepositoryDependencyInjector.modules,
             UseCaseDependencyInjector.modules,
             ViewModelDependencyInjector.modules,
+            UiDependencyInjector.modules
         ).flatten()
 }

@@ -21,7 +21,6 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = true
-            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -41,13 +40,15 @@ android {
 }
 
 dependencies {
+    implementation(projects.core.di)
+    implementation(projects.core.common)
     implementation(projects.presentation.ui)
-
-//    implementation(libs.koin.android)  // Koin for Android
-//    implementation(libs.koin.androidx.viewmodel) // Koin for viewmodel feature
 
     // Core
     implementation(libs.androidx.core.ktx)
+
+    // Koin
+    implementation(libs.koin.core.android)
 
     // Lifecycle
     implementation(libs.androidx.lifecycle.runtime.ktx)

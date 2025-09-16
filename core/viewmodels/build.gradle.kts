@@ -17,7 +17,6 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = true
-            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -41,6 +40,9 @@ dependencies {
 
     // Koin
     implementation(libs.koin.core)
+
+    // Lifecycle
+    implementation(libs.androidx.lifecycle.viewmodel)
 
     // Testing
     testImplementation(libs.junit)

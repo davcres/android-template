@@ -20,7 +20,6 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = true
-            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -56,6 +55,9 @@ dependencies {
     // Jetpack Compose
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.compose)
+
+    // Navigation
+    implementation(libs.androidx.navigation3.ui)
 
     // Testing
     testImplementation(libs.junit)

@@ -1,7 +1,7 @@
 [versions]
-android-compileSdk = "35"
+android-compileSdk = "36"
 android-minSdk = "29"
-android-targetSdk = "35"
+android-targetSdk = "36"
 agp = "8.10.1"
 detekt = "1.23.4"
 koin = "4.1.0"
@@ -9,7 +9,8 @@ kotlin = "2.0.21"
 coreKtx = "1.16.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
-lifecycleRuntimeKtx = "2.9.1"
+lifecycle = "2.9.3"
+navigation3 = "1.0.0-alpha09"
 activityCompose = "1.10.1"
 composeBom = "2025.08.01"
 material = "1.12.0"
@@ -19,10 +20,13 @@ version-catalog-update = "1.0.0"
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }         # Kotlin extensions for Android framework APIs (concise, idiomatic helpers).
 junit = { group = "junit", name = "junit", version.ref = "junit" }                                  # Classic JUnit 4 for JVM unit testing.
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }      # AndroidX JUnit runner and extensions for instrumented tests.
-androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" } # Lifecycle + Kotlin coroutines integration (`lifecycleScope`, `repeatOnLifecycle`).
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" } # Integration of Jetpack Compose with Android Activity (`setContent {}`).
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" } # Bill of Materials to align versions across all Compose libraries.
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }           # Jetpack Compose Material 3 components (M3 design system).
+androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "lifecycle" } # ViewModel architecture component (lifecycle-aware, survives configuration changes).
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" } # Lifecycle + Kotlin coroutines integration (`lifecycleScope`, `repeatOnLifecycle`).
+androidx-navigation3-runtime = { module = "androidx.navigation3:navigation3-runtime", version.ref = "navigation3" } # Jetpack Navigation3 for runtime navigation features (NavController, NavHost).
+androidx-navigation3-ui = { module = "androidx.navigation3:navigation3-ui", version.ref = "navigation3" } # Jetpack Navigation3 UI helpers (BottomNavigationView, NavigationView).
 androidx-ui = { group = "androidx.compose.ui", name = "ui" }                                        # Core UI primitives for Compose (Column, Row, Box, Modifier, etc.).
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }                      # Compose graphics utilities (Color, Brush, Path, Canvas, transforms).
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }                        # Runtime tooling for Compose (Layout Inspector, interactive preview) – use in debug builds.
@@ -31,6 +35,7 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }                # Compose testing framework for UI assertions (`composeTestRule`).
 detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" } # Provides a set of formatting rules for Detekt (wrapping ktlint).
 koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin" }                     # Koin integration with Jetpack Compose (`getViewModel()`, dependency injection in Composables).
+koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin" } # Koin extensions for injecting ViewModels in Composables. (viewModelOf)
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }                           # Core Koin dependency injection framework (standalone, platform-agnostic).
 koin-core-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }                # Koin Android extensions (lifecycle integration, ViewModel injection).
 
