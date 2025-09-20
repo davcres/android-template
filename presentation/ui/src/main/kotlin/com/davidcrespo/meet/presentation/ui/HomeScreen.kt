@@ -1,12 +1,12 @@
 package com.davidcrespo.meet.presentation.ui
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -17,21 +17,21 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation3.runtime.NavKey
 import com.davidcrespo.domain.models.theme.ThemeMode
 import com.davidcrespo.meet.core.ui.Animation
 import com.davidcrespo.meet.core.ui.ProgressButton
 import com.davidcrespo.meet.core.ui.Shadow
 import com.davidcrespo.meet.presentation.ui.theme.MeetTheme
+import kotlinx.serialization.Serializable
+
+@Serializable
+data object Home: NavKey
 
 @Composable
-@Preview
-fun App() {
-
-
-
-
-
-
+fun HomeScreen(
+    onClick: () -> Unit,
+) {
     var themeMode by rememberSaveable { mutableStateOf(ThemeMode.SYSTEM) }
 
     MeetTheme(themeMode = themeMode) {
@@ -42,6 +42,7 @@ fun App() {
                     .fillMaxSize(),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
+                Text("HOME")
                 Animation(
                     Modifier
                         .size(300.dp)
@@ -62,6 +63,7 @@ fun App() {
                     onClick = {
                         println("*** start scanning ***")
                         // startScanning(getPlatformContext())
+                        onClick()
                     },
                     onProgressComplete = {
                         println("*** scanning complete ***")
@@ -92,4 +94,12 @@ fun App() {
             }*/
         }
     }
+}
+
+@Preview
+@Composable
+private fun HomeScreenPreview() {
+    HomeScreen(
+        onClick = {}
+    )
 }
