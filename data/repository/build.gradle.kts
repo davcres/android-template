@@ -42,14 +42,10 @@ dependencies {
 
     // Koin
     implementation(libs.koin.core)
-//    implementation(libs.koin.core.android)
-//    implementation(libs.koin.androidx.compose)
-//    implementation(libs.koin.compose)
 
     // DataStore
     implementation(libs.datastore.preferences.core)
 
     // Testing
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
 }

@@ -48,11 +48,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
 
     // Koin
-    implementation(libs.koin.core)
-    implementation(libs.koin.compose.viewmodel)
-//    implementation(libs.koin.core.android)
-//    implementation(libs.koin.androidx.compose)
-//    implementation(libs.koin.compose)
+    implementation(libs.koin.androidx.compose)
 
     // Jetpack Compose
     implementation(platform(libs.androidx.compose.bom))

@@ -48,7 +48,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
 
     // Koin
-    implementation(libs.koin.core.android)
+    implementation(libs.koin.android)
 
     // Lifecycle
     implementation(libs.androidx.lifecycle.runtime.ktx)

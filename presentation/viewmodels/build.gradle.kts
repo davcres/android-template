@@ -42,10 +42,8 @@ dependencies {
     implementation(libs.androidx.core.ktx)
 
     // Koin
-    implementation(libs.koin.core)
-    implementation(libs.koin.compose.viewmodel)
+    implementation(libs.koin.android)
 
     // Testing
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
 }
