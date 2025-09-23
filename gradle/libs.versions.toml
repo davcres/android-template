@@ -7,13 +7,14 @@ detekt = "1.23.4"
 koin = "4.1.0"
 kotlin = "2.0.21"
 coreKtx = "1.16.0"
+datastore = "1.1.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 lifecycle = "2.9.3"
 navigation3 = "1.0.0-alpha09"
 navigation3-viewmodel = "1.0.0-alpha01"
-serialization = "1.9.0"
-activityCompose = "1.10.1"
+serialization = "1.7.3"
+activityCompose = "1.12.0-alpha08"
 composeBom = "2025.08.01"
 material = "1.12.0"
 version-catalog-update = "1.0.0"
@@ -36,11 +37,14 @@ androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }    
 androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }        # Lightweight support for `@Preview` annotations in Android Studio.
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }            # Provides a manifest for running Compose UI tests in debug.
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }                # Compose testing framework for UI assertions (`composeTestRule`).
+datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" } # DataStore.
+datastore-preferences-core = { group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "datastore" } # DataStore (core, no Android dependencies).
 detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" } # Provides a set of formatting rules for Detekt (wrapping ktlint).
+koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }                     # Koin integration with Jetpack Compose (`getViewModel()`, dependency injection in Composables).
 koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin" }                     # Koin integration with Jetpack Compose (`getViewModel()`, dependency injection in Composables).
 koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin" } # Koin extensions for injecting ViewModels in Composables. (viewModelOf)
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }                           # Core Koin dependency injection framework (standalone, platform-agnostic).
-koin-core-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }                # Koin Android extensions (lifecycle integration, ViewModel injection).
+koin-core-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }                # Koin Android extensions (lifecycle integration, ViewModel injection) and inject androidContext().
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization" } # Kotlin serialization library for JSON (de)serialization.
 
 [bundles]

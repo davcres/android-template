@@ -36,6 +36,7 @@ dependencies {
     implementation(projects.core.common)
     implementation(projects.core.viewmodels)
     implementation(projects.domain.models)
+    implementation(projects.domain.usecases)
 
     // Core
     implementation(libs.androidx.core.ktx)

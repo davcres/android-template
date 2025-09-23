@@ -38,8 +38,9 @@ android {
 }
 
 dependencies {
-    implementation(projects.core.ui)
     implementation(projects.core.common)
+    implementation(projects.core.ui)
+    implementation(projects.core.viewmodels)
     implementation(projects.domain.models)
     implementation(projects.presentation.viewmodels)
 
@@ -49,6 +50,9 @@ dependencies {
     // Koin
     implementation(libs.koin.core)
     implementation(libs.koin.compose.viewmodel)
+//    implementation(libs.koin.core.android)
+//    implementation(libs.koin.androidx.compose)
+//    implementation(libs.koin.compose)
 
     // Jetpack Compose
     implementation(platform(libs.androidx.compose.bom))
@@ -59,6 +63,9 @@ dependencies {
     implementation(libs.androidx.navigation3.ui)
     implementation(libs.androidx.navigation3.viewmodel)
     implementation(libs.kotlinx.serialization.json)
+
+    // DatapStore
+    implementation(libs.datastore.preferences)
 
     // Testing
     testImplementation(libs.junit)
