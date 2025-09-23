@@ -11,6 +11,8 @@ junit = "4.13.2"
 junitVersion = "1.2.1"
 lifecycle = "2.9.3"
 navigation3 = "1.0.0-alpha09"
+navigation3-viewmodel = "1.0.0-alpha01"
+serialization = "1.9.0"
 activityCompose = "1.10.1"
 composeBom = "2025.08.01"
 material = "1.12.0"
@@ -27,6 +29,7 @@ androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", nam
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" } # Lifecycle + Kotlin coroutines integration (`lifecycleScope`, `repeatOnLifecycle`).
 androidx-navigation3-runtime = { module = "androidx.navigation3:navigation3-runtime", version.ref = "navigation3" } # Jetpack Navigation3 for runtime navigation features (NavController, NavHost).
 androidx-navigation3-ui = { module = "androidx.navigation3:navigation3-ui", version.ref = "navigation3" } # Jetpack Navigation3 UI helpers (BottomNavigationView, NavigationView).
+androidx-navigation3-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-navigation3", version.ref = "navigation3-viewmodel" } # Jetpack Navigation3 integration with ViewModel (ViewModelStore support).
 androidx-ui = { group = "androidx.compose.ui", name = "ui" }                                        # Core UI primitives for Compose (Column, Row, Box, Modifier, etc.).
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }                      # Compose graphics utilities (Color, Brush, Path, Canvas, transforms).
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }                        # Runtime tooling for Compose (Layout Inspector, interactive preview) – use in debug builds.
@@ -38,6 +41,7 @@ koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin" } 
 koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin" } # Koin extensions for injecting ViewModels in Composables. (viewModelOf)
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }                           # Core Koin dependency injection framework (standalone, platform-agnostic).
 koin-core-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }                # Koin Android extensions (lifecycle integration, ViewModel injection).
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization" } # Kotlin serialization library for JSON (de)serialization.
 
 [bundles]
 compose = [
@@ -53,5 +57,6 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 nl-littlerobots-version-catalog-update = { id = "nl.littlerobots.version-catalog-update", version.ref = "version-catalog-update" }
