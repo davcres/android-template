@@ -17,16 +17,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation3.runtime.NavKey
 import com.davidcrespo.domain.models.theme.ThemeMode
 import com.davidcrespo.meet.core.ui.Animation
 import com.davidcrespo.meet.core.ui.ProgressButton
 import com.davidcrespo.meet.core.ui.Shadow
 import com.davidcrespo.meet.presentation.ui.theme.MeetTheme
-import kotlinx.serialization.Serializable
-
-@Serializable
-data object Home: NavKey
 
 @Composable
 fun HomeScreen(

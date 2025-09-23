@@ -4,6 +4,7 @@ import androidx.lifecycle.viewModelScope
 import com.davidcrespo.domain.models.theme.ThemeMode
 import com.davidcrespo.domain.usecases.GetThemeUseCase
 import com.davidcrespo.domain.usecases.SetThemeUseCase
+import com.davidcrespo.meet.core.common.Constants.Flow.SUBSCRIPTION_DURATION
 import com.davidcrespo.meet.core.viewmodels.BaseViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -14,14 +15,14 @@ import kotlinx.coroutines.launch
 class SettingsViewModel(
     private val getThemeUseCase: GetThemeUseCase,
     private val setThemeUseCase: SetThemeUseCase
-): BaseViewModel() {
+) : BaseViewModel() {
 
     val themeMode: StateFlow<ThemeMode> =
         getThemeUseCase()
             .distinctUntilChanged()
             .stateIn(
                 scope = viewModelScope,
-                started = SharingStarted.WhileSubscribed(5_000),
+                started = SharingStarted.WhileSubscribed(SUBSCRIPTION_DURATION),
                 initialValue = ThemeMode.SYSTEM
             )
 

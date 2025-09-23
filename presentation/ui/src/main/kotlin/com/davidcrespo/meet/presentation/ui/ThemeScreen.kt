@@ -12,15 +12,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.navigation3.runtime.NavKey
 import com.davidcrespo.domain.models.theme.ThemeMode
 import com.davidcrespo.meet.presentation.ui.theme.MeetTheme
 import com.davidcrespo.meet.presentation.viewmodels.SettingsViewModel
-import kotlinx.serialization.Serializable
 import org.koin.compose.viewmodel.koinViewModel
-
-@Serializable
-data object Theme: NavKey
 
 @Composable
 @Preview
