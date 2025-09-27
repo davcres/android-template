@@ -1,4 +1,4 @@
-package com.davidcrespo.meet.presentation.ui.navigation
+package com.davidcrespo.meet.presentation.navigation.destinations
 
 import androidx.navigation3.runtime.NavKey
 import kotlinx.serialization.Serializable

@@ -1,22 +1,23 @@
-package com.davidcrespo.meet.presentation.ui
+package com.davidcrespo.meet.core.navigation
 
 import androidx.compose.animation.ContentTransform
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
-import androidx.navigation3.runtime.entry
+import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSavedStateNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import androidx.navigation3.ui.rememberSceneSetupNavEntryDecorator
-import com.davidcrespo.meet.presentation.ui.navigation.Home
-import com.davidcrespo.meet.presentation.ui.navigation.Theme
+import com.davidcrespo.meet.presentation.navigation.destinations.Home
+import com.davidcrespo.meet.presentation.navigation.homeNavigation
+import com.davidcrespo.meet.presentation.navigation.settingsNavigation
 
 @Composable
 fun Navigation() {
-    val backStack = rememberNavBackStack(Home)
+    val backStack = rememberNavBackStack<NavKey>(Home)
 
     NavDisplay(
         backStack = backStack,
@@ -38,16 +39,8 @@ fun Navigation() {
             )
         },
         entryProvider = entryProvider {
-            entry<Home> {
-                HomeScreen(
-                    onClick = {
-                        backStack.add(Theme)
-                    },
-                )
-            }
-            entry<Theme> {
-                ThemeScreen()
-            }
+            homeNavigation(backStack)
+            settingsNavigation(backStack)
             /* Otra forma de inyectar el viewmodel con Koin y pasarle parámetros
             entry<Theme> { key ->
                 ThemeScreen(

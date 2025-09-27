@@ -1,12 +1,13 @@
+import org.jetbrains.kotlin.compose.compiler.gradle.ComposeFeatureFlag
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
-    namespace = "com.davidcrespo.meet.shared.presentation.ui"
+    namespace = "com.davidcrespo.meet.shared.core.navigation"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
@@ -35,35 +36,22 @@ android {
     buildFeatures {
         compose = true
     }
+    composeCompiler {
+        featureFlags = setOf(
+            ComposeFeatureFlag.StrongSkipping.disabled() // To avoid recompositions with no stable composables
+        )
+    }
 }
 
 dependencies {
     implementation(projects.core.common)
-    implementation(projects.core.ui)
-    implementation(projects.core.viewmodels)
-    implementation(projects.domain.models)
-    implementation(projects.presentation.viewmodels)
+    implementation(projects.presentation.navigation)
 
     // Core
     implementation(libs.androidx.core.ktx)
-
-    // Koin
-    implementation(libs.koin.androidx.compose)
-
-    // Jetpack Compose
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.bundles.compose)
 
     // Navigation
     implementation(libs.androidx.navigation3.runtime)
     implementation(libs.androidx.navigation3.ui)
     implementation(libs.androidx.navigation3.viewmodel)
-    implementation(libs.kotlinx.serialization.json)
-
-    // DataStore
-    implementation(libs.datastore.preferences)
-
-    // Testing
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
 }

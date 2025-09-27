@@ -38,4 +38,7 @@ dependencies {
 
     // Koin
     implementation(libs.koin.core)
+
+    // Navigation
+    implementation(libs.androidx.navigation3.ui)
 }

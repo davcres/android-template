@@ -1,21 +1,19 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
-    namespace = "com.davidcrespo.meet"
+    namespace = "com.davidcrespo.meet.shared.presentation.navigation"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.davidcrespo.meet"
         minSdk = libs.versions.android.minSdk.get().toInt()
-        targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 1
-        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -40,28 +38,23 @@ android {
 }
 
 dependencies {
-    implementation(projects.core.di)
     implementation(projects.core.common)
-    implementation(projects.core.navigation)
+    implementation(projects.presentation.ui)
+    implementation(projects.presentation.viewmodels)
 
     // Core
     implementation(libs.androidx.core.ktx)
 
-    // Koin
-    implementation(libs.koin.android)
-
-    // Lifecycle
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-
     // Jetpack Compose
     implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.activity.compose)
     implementation(libs.bundles.compose)
-    debugImplementation(libs.androidx.ui.tooling)
+
+    // Navigation
+    implementation(libs.androidx.navigation3.runtime)
+    implementation(libs.androidx.navigation3.ui)
+    implementation(libs.androidx.navigation3.viewmodel)
+    implementation(libs.kotlinx.serialization.json)
 
     // Testing
-    testImplementation(libs.junit) // Unit testing
-    androidTestImplementation(libs.androidx.junit) // Instrumented testing (on device)
-    androidTestImplementation(libs.androidx.ui.test.junit4) // Compose testing
-    debugImplementation(libs.androidx.ui.test.manifest) // Compose testing (create a mock manifest to run tests in debug)
+    testImplementation(libs.junit)
 }

@@ -16,7 +16,6 @@ navigation3-viewmodel = "1.0.0-alpha01"
 serialization = "1.7.3"
 activityCompose = "1.12.0-alpha08"
 composeBom = "2025.08.01"
-material = "1.12.0"
 version-catalog-update = "1.0.0"
 
 [libraries]
