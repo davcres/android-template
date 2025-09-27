@@ -24,6 +24,8 @@ formatting:
     active: true
   MaximumLineLength:
     active: false
+  MultiLineIfElse:
+    active: false
 
 processors:
   active: true

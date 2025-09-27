@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>FunctionOnlyReturningConstant:Boolean.kt$fun Boolean.Companion.empty()</ID>
+    <ID>FunctionOnlyReturningConstant:Int.kt$fun Int.Companion.empty()</ID>
+    <ID>FunctionOnlyReturningConstant:String.kt$fun String.Companion.empty()</ID>
+  </CurrentIssues>
+</SmellBaseline>

@@ -10,4 +10,10 @@ object Constants {
     object Flow {
         const val SUBSCRIPTION_DURATION: Long = 5_000
     }
+
+    object UI {
+        object UITest {
+            const val ID = "id"
+        }
+    }
 }
