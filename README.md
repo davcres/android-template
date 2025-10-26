@@ -1,5 +1,15 @@
 # template
 
+# features
+- Multi module project
+- Clean architecture
+- Koin
+- Data Store
+- Compose Navigation
+- Detekt
+- Detekt custom rules
+- Detekt Pre Commit
+
 ### Warning!! 💥
 
 This project contains a pre-commit and pre-push hook to have a better code quality. It is
@@ -25,3 +35,8 @@ Studio's terminal or your preferred terminal):
 ```bash
 $ ./gradlew detekt
 ```
+
+# Kotzilla
+Kotzilla es un SDK para monitorear y optimizar el rendimiento. Se debe instalar el plugin
+Koin y conectarlo con tu cuenta. El proyecto cuenta con un archivo kotzilla.json donde se
+deben añadir las claves de tu cuenta.

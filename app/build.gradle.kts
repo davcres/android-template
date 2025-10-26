@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotzilla)
 }
 
 android {
@@ -64,4 +65,11 @@ dependencies {
     androidTestImplementation(libs.androidx.junit) // Instrumented testing (on device)
     androidTestImplementation(libs.androidx.ui.test.junit4) // Compose testing
     debugImplementation(libs.androidx.ui.test.manifest) // Compose testing (create a mock manifest to run tests in debug)
+
+    // Analytics
+    implementation(libs.kotzilla.sdk.compose) // Kotzilla SDK
+}
+
+kotzilla {
+    composeInstrumentation = true
 }
