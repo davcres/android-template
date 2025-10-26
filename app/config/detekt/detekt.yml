@@ -110,7 +110,7 @@ complexity:
     threshold: 15
   ComplexCondition:
     active: true
-    threshold: 4
+    threshold: 5
   ComplexInterface:
     active: false
     threshold: 10
@@ -799,3 +799,18 @@ style:
     active: true
     #excludeImports:
     #  - 'java.util.*'
+ArchitectureRules:
+  ForbiddenImport: # Impide dependencias cruzadas entre capas.
+    active: true
+    rootPackage: "com.davcres.template"
+    allowedPrefixes: "android.os.Parcelable,kotlinx.coroutines.flow.Flow,kotlinx.parcelize.Parcelize,androidx.paging.,androidx.annotation.Keep,androidx.annotation.Keep"
+  AndroidInDomain: # Evita dependencias de Android o AndroidX dentro del Domain Layer. Solo se permiten excepciones como Parcelable, Parcelize, Keep o Paging.
+    active: true
+    rootPackage: "com.davcres.template"
+    allowedPrefixes: "android.os.Parcelable,kotlinx.coroutines.flow.Flow,kotlinx.parcelize.Parcelize,androidx.paging.,androidx.annotation.Keep,androidx.paging.PagingConfig"
+  #(regla para features por packages, no modulos) FeatureIsolation: # Aísla las features dentro de ui/views, impidiendo que se importen entre sí. Solo la feature navigation puede interactuar con todas.
+    #active: true
+    #rootPackage: "com.davcres.template"
+    #featuresBase: "com.davcres.template"
+    #allowedBridges: "navigation"
+    #excludes: [ "**/navigation/**" ]

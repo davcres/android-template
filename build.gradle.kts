@@ -8,6 +8,7 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.compose) apply false
     alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.jetbrains.kotlin.jvm) apply false
     alias(libs.plugins.kotlin.serialization) apply false
     alias(libs.plugins.detekt)
     alias(libs.plugins.nl.littlerobots.version.catalog.update)
@@ -25,6 +26,7 @@ subprojects {
     // Configuración compartida
     plugins.withId("io.gitlab.arturbosch.detekt") {
         dependencies {
+            detektPlugins(project(":detekt-architecture-rules"))
             detektPlugins(libs.detekt.formatting)
         }
         detekt {
