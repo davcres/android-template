@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.davidcrespo.meet.shared.presentation.viewmodels"
+    namespace = "com.davidcrespo.template.shared.presentation.viewmodels"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {

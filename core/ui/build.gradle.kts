@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.davidcrespo.meet.shared.core.ui"
+    namespace = "com.davidcrespo.template.shared.core.ui"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {

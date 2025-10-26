@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.davidcrespo.meet.shared.domain.repository"
+    namespace = "com.davidcrespo.template.shared.domain.repository"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {

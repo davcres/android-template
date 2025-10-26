@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.davidcrespo.meet.shared.core.navigation"
+    namespace = "com.davidcrespo.template.shared.core.navigation"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {

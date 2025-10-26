@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.davidcrespo.meet.shared.domain.usecases"
+    namespace = "com.davidcrespo.template.shared.domain.usecases"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
