@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.davidcrespo.template"
+    namespace = "com.davcres.template"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.davidcrespo.template"
+        applicationId = "com.davcres.template"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.davidcrespo.template.shared.core.viewmodels"
+    namespace = "com.davcres.template.shared.core.viewmodels"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {

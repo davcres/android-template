@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.davidcrespo.template.shared.presentation.navigation"
+    namespace = "com.davcres.template.shared.presentation.navigation"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {

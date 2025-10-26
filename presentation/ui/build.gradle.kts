@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.davidcrespo.template.shared.presentation.ui"
+    namespace = "com.davcres.template.shared.presentation.ui"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {

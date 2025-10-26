@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.davidcrespo.template.shared.data.source"
+    namespace = "com.davcres.template.shared.data.source"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
