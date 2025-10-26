@@ -38,3 +38,7 @@ google-services.json
 
 # Mac files
 .DS_Store
+
+# Kotzilla
+app/src/main/assets/kotzilla.key
+#app/kotzilla.json
