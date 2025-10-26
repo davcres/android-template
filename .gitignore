@@ -41,4 +41,4 @@ google-services.json
 
 # Kotzilla
 app/src/main/assets/kotzilla.key
-#app/kotzilla.json
+app/kotzilla.json
