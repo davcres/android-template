@@ -2,25 +2,25 @@
 android-compileSdk = "36"
 android-minSdk = "29"
 android-targetSdk = "36"
+activityCompose = "1.12.0-alpha08"
 agp = "8.10.1"
-detekt = "1.23.4"
-koin = "4.1.0"
-kotlin = "2.0.21"
+composeBom = "2025.08.01"
 coreKtx = "1.16.0"
 datastore = "1.1.1"
+detekt = "1.23.4"
+jetbrainsKotlinJvm = "2.0.21"
 junit = "4.13.2"
 junitVersion = "1.2.1"
+koin = "4.1.0"
+kotlin = "2.0.21"
 lifecycle = "2.9.3"
 navigation3 = "1.0.0-alpha09"
 navigation3-viewmodel = "1.0.0-alpha01"
 serialization = "1.7.3"
-activityCompose = "1.12.0-alpha08"
-composeBom = "2025.08.01"
 version-catalog-update = "1.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }         # Kotlin extensions for Android framework APIs (concise, idiomatic helpers).
-junit = { group = "junit", name = "junit", version.ref = "junit" }                                  # Classic JUnit 4 for JVM unit testing.
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }      # AndroidX JUnit runner and extensions for instrumented tests.
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" } # Integration of Jetpack Compose with Android Activity (`setContent {}`).
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" } # Bill of Materials to align versions across all Compose libraries.
@@ -38,7 +38,9 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }                # Compose testing framework for UI assertions (`composeTestRule`).
 datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" } # DataStore.
 datastore-preferences-core = { group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "datastore" } # DataStore (core, no Android dependencies).
+detekt-api = { module = "io.gitlab.arturbosch.detekt:detekt-api", version.ref = "detekt" }          # To apply custom rules.
 detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" } # Provides a set of formatting rules for Detekt (wrapping ktlint).
+junit = { group = "junit", name = "junit", version.ref = "junit" }                                  # Classic JUnit 4 for JVM unit testing.
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }                     # Extensiones Android: androidContext(), integración con lifecycle y DSL de ViewModel (viewModel { … }, viewModelOf(::Vm)), inyección en Activity/Fragment (by viewModel())
 koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }   # Integración con Jetpack Compose (Android): utilidades como koinViewModel() dentro de Composables, getKoin() en Compose, etc. No trae el DSL de ViewModel por sí solo: normalmente lo combinas con koin-android.
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }                           # Núcleo de Koin (100% Kotlin, sin Android). Define módulos (module { single { … } }, factory { … }) y resuelve inyección. Útil en tests o librerías puras.
@@ -55,9 +57,10 @@ compose = [
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-android-library = { id = "com.android.library", version.ref = "agp" }
 nl-littlerobots-version-catalog-update = { id = "nl.littlerobots.version-catalog-update", version.ref = "version-catalog-update" }
