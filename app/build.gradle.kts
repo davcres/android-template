@@ -20,6 +20,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix = ".debug"
+            versionNameSuffix = "-debug"
+            isDebuggable = true
+        }
         release {
             isMinifyEnabled = true
             proguardFiles(
@@ -28,6 +33,27 @@ android {
             )
         }
     }
+
+    flavorDimensions += "env"
+    productFlavors {
+        create("pre") {
+            dimension = "env"
+            applicationIdSuffix = ".pre"
+            versionNameSuffix = "-pre"
+            resValue("string", "app_name", "TemplateApp (Pre)")
+
+            buildConfigField("String", "API_BASE_URL", "\"https://api-pre.example.com\"")
+            buildConfigField("Boolean", "IS_PRO", "false")
+        }
+        create("pro") {
+            dimension = "env"
+            resValue("string", "app_name", "TemplateApp")
+
+            buildConfigField("String", "API_BASE_URL", "\"https://api.example.com\"")
+            buildConfigField("Boolean", "IS_PRO", "true")
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
@@ -37,6 +63,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
