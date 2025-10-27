@@ -82,8 +82,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
 
     // Jetpack Compose
-    implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
+    implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.compose)
     debugImplementation(libs.androidx.ui.tooling)
 

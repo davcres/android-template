@@ -50,11 +50,17 @@ kotzilla-sdk-compose = { group = "io.kotzilla", name = "kotzilla-sdk-compose", v
 
 [bundles]
 compose = [
-    "androidx-activity-compose", # TODO*** try to put only in app module
     "androidx-compose-material3",
     "androidx-ui",
     "androidx-ui-graphics",
     "androidx-ui-tooling-preview",
+]
+
+navigation = [
+    "androidx-navigation3-runtime",
+    "androidx-navigation3-ui",
+    "androidx-navigation3-viewmodel",
+    "kotlinx-serialization-json"
 ]
 
 [plugins]

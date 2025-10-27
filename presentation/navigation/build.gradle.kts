@@ -42,19 +42,6 @@ dependencies {
     implementation(projects.presentation.ui)
     implementation(projects.presentation.viewmodels)
 
-    // Core
-    implementation(libs.androidx.core.ktx)
-
-    // Jetpack Compose
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.bundles.compose)
-
     // Navigation
-    implementation(libs.androidx.navigation3.runtime)
-    implementation(libs.androidx.navigation3.ui)
-    implementation(libs.androidx.navigation3.viewmodel)
-    implementation(libs.kotlinx.serialization.json)
-
-    // Testing
-    testImplementation(libs.junit)
+    implementation(libs.bundles.navigation)
 }
