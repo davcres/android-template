@@ -9,13 +9,13 @@ import org.koin.core.context.startKoin
 class TemplateApplication : Application() {
 
     override fun onCreate() {
+        super.onCreate()
+
         startKoin {
             androidContext(this@TemplateApplication)
             modules(CoreDiDependencyInjector.modules)
 
             analytics() // kotzilla analytics
         }
-
-        super.onCreate()
     }
 }
