@@ -13,6 +13,7 @@ junit = "4.13.2"
 junitVersion = "1.2.1"
 koin = "4.1.0"
 kotlin = "2.0.21"
+kotzilla = "1.2.3"
 lifecycle = "2.9.3"
 navigation3 = "1.0.0-alpha09"
 navigation3-viewmodel = "1.0.0-alpha01"
@@ -45,6 +46,7 @@ koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" } 
 koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }   # Integración con Jetpack Compose (Android): utilidades como koinViewModel() dentro de Composables, getKoin() en Compose, etc. No trae el DSL de ViewModel por sí solo: normalmente lo combinas con koin-android.
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }                           # Núcleo de Koin (100% Kotlin, sin Android). Define módulos (module { single { … } }, factory { … }) y resuelve inyección. Útil en tests o librerías puras.
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization" } # Kotlin serialization library for JSON (de)serialization.
+kotzilla-sdk-compose = { group = "io.kotzilla", name = "kotzilla-sdk-compose", version.ref = "kotzilla" }
 
 [bundles]
 compose = [
@@ -63,4 +65,5 @@ jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrai
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotzilla = { id = "io.kotzilla.kotzilla-plugin", version.ref = "kotzilla" }
 nl-littlerobots-version-catalog-update = { id = "nl.littlerobots.version-catalog-update", version.ref = "version-catalog-update" }

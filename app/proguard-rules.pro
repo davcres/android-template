@@ -19,3 +19,10 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Kotzilla
+-keep class io.kotzilla.data.json.** { *; }
+-keep class io.kotzilla.sdk.** { *; }
+# (si te aplica) campos volátiles de Kotlin/Ktor
+-keepclassmembers class kotlinx.** { volatile <fields>; }
+-keepclassmembers class io.ktor.** { volatile <fields>; }
