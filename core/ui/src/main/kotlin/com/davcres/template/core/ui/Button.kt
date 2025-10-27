@@ -52,8 +52,8 @@ import androidx.compose.ui.unit.sp
 import com.davcres.template.core.common.Constants.UI.UITest.ID
 import com.davcres.template.core.common.extensions.toCamelCase
 import com.davcres.template.core.ui.auxiliary.ButtonStyle
-import com.davcres.template.core.ui.extensions.bounceClick
-import com.davcres.template.core.ui.extensions.drawUnderline
+import com.davcres.template.core.ui.extensions.modifiers.bounceClick
+import com.davcres.template.core.ui.extensions.modifiers.drawUnderline
 import com.davcres.template.core.ui.theme.Color.Button.ButtonPrimary
 import com.davcres.template.core.ui.theme.Color.Button.ButtonPrimaryDisabled
 import com.davcres.template.core.ui.theme.Color.Button.ButtonPrimaryDisabledText
