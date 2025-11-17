@@ -14,6 +14,7 @@ import androidx.navigation3.ui.rememberSceneSetupNavEntryDecorator
 import com.davcres.template.presentation.navigation.destinations.Home
 import com.davcres.template.presentation.navigation.homeNavigation
 import com.davcres.template.presentation.navigation.settingsNavigation
+import com.davcres.template.presentation.navigation.swapsNavigation
 
 @Composable
 fun Navigation() {
@@ -41,6 +42,7 @@ fun Navigation() {
         entryProvider = entryProvider {
             homeNavigation(backStack)
             settingsNavigation(backStack)
+            swapsNavigation(backStack)
             /* Otra forma de inyectar el viewmodel con Koin y pasarle parámetros
             entry<Theme> { key ->
                 ThemeScreen(
