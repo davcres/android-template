@@ -19,5 +19,10 @@ enum class BottomDestinations(
 ) {
     HOME(Home, R.string.bottom_nav_home, Icons.Default.Home),
     SWIPE(Swipe, R.string.bottom_nav_swipe, Icons.Default.Star),
-    SETTINGS(Settings, R.string.bottom_nav_settings, Icons.Default.Settings),
+    SETTINGS(Settings, R.string.bottom_nav_settings, Icons.Default.Settings);
+
+    companion object {
+        fun fromRoute(route: NavKey?): BottomDestinations =
+            entries.firstOrNull { it.route == route } ?: HOME
+    }
 }

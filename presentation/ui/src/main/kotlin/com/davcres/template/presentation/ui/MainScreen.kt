@@ -1,5 +1,6 @@
 package com.davcres.template.presentation.ui
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -17,6 +18,7 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -46,24 +48,44 @@ fun MainScreen(
     var themeMode by rememberSaveable { mutableStateOf(ThemeMode.SYSTEM) }
 
     val bottomBackStack = rememberNavBackStack(Home)
-    var selectedTab by remember { mutableStateOf(BottomDestinations.HOME) }
+
+    val destinations = remember { BottomDestinations.entries.toList() }
+
+    val onBack: () -> Unit = {
+        if (bottomBackStack.size > 1) {
+            bottomBackStack.removeLastOrNull()
+        } else {
+            bottomBackStack.clear()
+            bottomBackStack.add(BottomDestinations.HOME.route)
+        }
+    }
+
+    val canNavigateBack by remember {
+        derivedStateOf {
+            bottomBackStack.size > 1 ||
+                bottomBackStack.firstOrNull() != BottomDestinations.HOME.route
+        }
+    }
+
+    val selectedTab by remember {
+        derivedStateOf {
+            BottomDestinations.fromRoute(bottomBackStack.lastOrNull())
+        }
+    }
+
+    // Handle Android back button
+    BackHandler(enabled = canNavigateBack) {
+        onBack()
+    }
 
     TemplateTheme(themeMode = themeMode) {
         Scaffold(
             topBar = {
                 TopAppBar(
                     navigationIcon = {
-                        AnimatedVisibility(
-                            bottomBackStack.size > 1 || bottomBackStack.first() != BottomDestinations.HOME.route
-                        ) {
+                        AnimatedVisibility(canNavigateBack) {
                             IconButton(onClick = {
-                                if (bottomBackStack.size > 1) {
-                                    bottomBackStack.removeLastOrNull()
-                                } else {
-                                    bottomBackStack.clear()
-                                    bottomBackStack.add(BottomDestinations.HOME.route)
-                                }
-                                selectedTab = BottomDestinations.entries.find { it.route == bottomBackStack.last() } ?: BottomDestinations.HOME
+                                onBack()
                             }) {
                                 Icon(
                                     imageVector = Icons.AutoMirrored.Outlined.ArrowBack,
@@ -102,7 +124,7 @@ fun MainScreen(
             },
             bottomBar = {
                 NavigationBar {
-                    BottomDestinations.entries.forEach { destination ->
+                    destinations.forEach { destination ->
                         NavigationBarItem(
                             selected = destination == selectedTab,
                             onClick = {
@@ -112,7 +134,6 @@ fun MainScreen(
                                     bottomBackStack.remove(destination.route)
                                 }
                                 bottomBackStack.add(destination.route)
-                                selectedTab = destination
                             },
                             icon = {
                                 Icon(
