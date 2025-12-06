@@ -12,55 +12,54 @@ jetbrainsKotlinJvm = "2.0.21"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 koin = "4.1.0"
-kotlin = "2.0.21"
+kotlin = "2.2.21"
 kotzilla = "1.2.3"
 lifecycle = "2.9.3"
-navigation3 = "1.0.0-alpha09"
-navigation3-viewmodel = "1.0.0-alpha01"
-serialization = "1.7.3"
+navigation3 = "1.0.0"
+navigation3-viewmodel = "2.10.0"
+serialization = "1.9.0"
 version-catalog-update = "1.0.0"
 
 [libraries]
-androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }         # Kotlin extensions for Android framework APIs (concise, idiomatic helpers).
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }      # AndroidX JUnit runner and extensions for instrumented tests.
-androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" } # Integration of Jetpack Compose with Android Activity (`setContent {}`).
-androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" } # Bill of Materials to align versions across all Compose libraries.
-androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }           # Jetpack Compose Material 3 components (M3 design system).
-androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "lifecycle" } # ViewModel architecture component (lifecycle-aware, survives configuration changes).
-androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" } # Lifecycle + Kotlin coroutines integration (`lifecycleScope`, `repeatOnLifecycle`).
-androidx-navigation3-runtime = { module = "androidx.navigation3:navigation3-runtime", version.ref = "navigation3" } # Jetpack Navigation3 for runtime navigation features (NavController, NavHost).
-androidx-navigation3-ui = { module = "androidx.navigation3:navigation3-ui", version.ref = "navigation3" } # Jetpack Navigation3 UI helpers (BottomNavigationView, NavigationView).
-androidx-navigation3-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-navigation3", version.ref = "navigation3-viewmodel" } # Jetpack Navigation3 integration with ViewModel (ViewModelStore support).
-androidx-ui = { group = "androidx.compose.ui", name = "ui" }                                        # Core UI primitives for Compose (Column, Row, Box, Modifier, etc.).
-androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }                      # Compose graphics utilities (Color, Brush, Path, Canvas, transforms).
-androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }                        # Runtime tooling for Compose (Layout Inspector, interactive preview) – use in debug builds.
-androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }        # Lightweight support for `@Preview` annotations in Android Studio.
-androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }            # Provides a manifest for running Compose UI tests in debug.
-androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }                # Compose testing framework for UI assertions (`composeTestRule`).
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" } # Integration of Jetpack Compose with Android Activity (`setContent {}`).
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" } # Bill of Materials to align versions across all Compose libraries.
+compose-material3 = { group = "androidx.compose.material3", name = "material3" }           # Jetpack Compose Material 3 components (M3 design system).
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }         # Kotlin extensions for Android framework APIs (concise, idiomatic helpers).
 datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" } # DataStore.
 datastore-preferences-core = { group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "datastore" } # DataStore (core, no Android dependencies).
 detekt-api = { module = "io.gitlab.arturbosch.detekt:detekt-api", version.ref = "detekt" }          # To apply custom rules.
 detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" } # Provides a set of formatting rules for Detekt (wrapping ktlint).
 junit = { group = "junit", name = "junit", version.ref = "junit" }                                  # Classic JUnit 4 for JVM unit testing.
+junit-test = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }          # AndroidX JUnit runner and extensions for instrumented tests.
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }                     # Extensiones Android: androidContext(), integración con lifecycle y DSL de ViewModel (viewModel { … }, viewModelOf(::Vm)), inyección en Activity/Fragment (by viewModel())
 koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }   # Integración con Jetpack Compose (Android): utilidades como koinViewModel() dentro de Composables, getKoin() en Compose, etc. No trae el DSL de ViewModel por sí solo: normalmente lo combinas con koin-android.
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }                           # Núcleo de Koin (100% Kotlin, sin Android). Define módulos (module { single { … } }, factory { … }) y resuelve inyección. Útil en tests o librerías puras.
-kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization" } # Kotlin serialization library for JSON (de)serialization.
+kotlinx-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "serialization" } # Kotlin serialization library.
 kotzilla-sdk-compose = { group = "io.kotzilla", name = "kotzilla-sdk-compose", version.ref = "kotzilla" }
+lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "lifecycle" } # ViewModel architecture component (lifecycle-aware, survives configuration changes).
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" } # Lifecycle + Kotlin coroutines integration (`lifecycleScope`, `repeatOnLifecycle`).
+navigation3-runtime = { module = "androidx.navigation3:navigation3-runtime", version.ref = "navigation3" } # Jetpack Navigation3 for runtime navigation features (NavController, NavHost).
+navigation3-ui = { module = "androidx.navigation3:navigation3-ui", version.ref = "navigation3" } # Jetpack Navigation3 UI helpers (BottomNavigationView, NavigationView).
+navigation3-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-navigation3", version.ref = "navigation3-viewmodel" } # Jetpack Navigation3 integration with ViewModel (ViewModelStore support).
+ui = { group = "androidx.compose.ui", name = "ui" }                                        # Core UI primitives for Compose (Column, Row, Box, Modifier, etc.).
+ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }                      # Compose graphics utilities (Color, Brush, Path, Canvas, transforms).
+ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }                        # Runtime tooling for Compose (Layout Inspector, interactive preview) – use in debug builds.
+ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }        # Lightweight support for `@Preview` annotations in Android Studio.
+ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }            # Provides a manifest for running Compose UI tests in debug.
+ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }                # Compose testing framework for UI assertions (`composeTestRule`).
 
 [bundles]
 compose = [
-    "androidx-compose-material3",
-    "androidx-ui",
-    "androidx-ui-graphics",
-    "androidx-ui-tooling-preview",
+    "compose-material3",
+    "ui",
+    "ui-graphics",
+    "ui-tooling-preview",
 ]
 
 navigation = [
-    "androidx-navigation3-runtime",
-    "androidx-navigation3-ui",
-    "androidx-navigation3-viewmodel",
-    "kotlinx-serialization-json"
+    "navigation3-runtime",
+    "navigation3-ui",
+    "navigation3-viewmodel",
 ]
 
 [plugins]

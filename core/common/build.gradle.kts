@@ -34,11 +34,11 @@ android {
 
 dependencies {
     // Core
-    implementation(libs.androidx.core.ktx)
+    implementation(libs.core.ktx)
 
     // Koin
     implementation(libs.koin.core)
 
     // Navigation
-    implementation(libs.androidx.navigation3.ui)
+    implementation(libs.navigation3.ui)
 }

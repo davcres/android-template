@@ -5,26 +5,21 @@ import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
-import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
-import androidx.navigation3.runtime.rememberSavedStateNavEntryDecorator
+import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
-import androidx.navigation3.ui.rememberSceneSetupNavEntryDecorator
-import com.davcres.template.presentation.navigation.destinations.Home
-import com.davcres.template.presentation.navigation.homeNavigation
-import com.davcres.template.presentation.navigation.settingsNavigation
-import com.davcres.template.presentation.navigation.swapsNavigation
+import com.davcres.template.presentation.ui.navigation.destinations.RootKey.Login
+import com.davcres.template.presentation.ui.navigation.mainNavigation
 
 @Composable
-fun Navigation() {
-    val backStack = rememberNavBackStack<NavKey>(Home)
+fun MainNavigation() {
+    val backStack = rememberNavBackStack(Login)
 
     NavDisplay(
         backStack = backStack,
         entryDecorators = listOf(
-            rememberSceneSetupNavEntryDecorator(),
-            rememberSavedStateNavEntryDecorator(),
+            rememberSaveableStateHolderNavEntryDecorator(),
             rememberViewModelStoreNavEntryDecorator() // para que los viewmodels sobrevivan solo durante el tiempo de vida de la entry a la que están asociados
         ),
         transitionSpec = { // navegación hacia adelante
@@ -40,9 +35,7 @@ fun Navigation() {
             )
         },
         entryProvider = entryProvider {
-            homeNavigation(backStack)
-            settingsNavigation(backStack)
-            swapsNavigation(backStack)
+            mainNavigation(backStack)
             /* Otra forma de inyectar el viewmodel con Koin y pasarle parámetros
             entry<Theme> { key ->
                 ThemeScreen(

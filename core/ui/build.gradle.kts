@@ -47,17 +47,17 @@ dependencies {
     implementation(projects.core.common)
 
     // Core
-    implementation(libs.androidx.core.ktx)
+    implementation(libs.core.ktx)
 
     // Koin
     implementation(libs.koin.core)
 
     // Jetpack Compose
-    implementation(platform(libs.androidx.compose.bom))
+    implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)
 
     // Navigation
-    implementation(libs.androidx.navigation3.ui)
+    implementation(libs.navigation3.ui)
 
     // Testing
     testImplementation(libs.junit)

@@ -45,13 +45,11 @@ android {
 
 dependencies {
     implementation(projects.core.common)
-    implementation(projects.presentation.navigation)
+    implementation(projects.presentation.ui)
 
     // Core
-    implementation(libs.androidx.core.ktx)
+    implementation(libs.core.ktx)
 
     // Navigation
-    implementation(libs.androidx.navigation3.runtime)
-    implementation(libs.androidx.navigation3.ui)
-    implementation(libs.androidx.navigation3.viewmodel)
+    implementation(libs.bundles.navigation)
 }
