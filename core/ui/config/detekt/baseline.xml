@@ -3,7 +3,6 @@
   <ManuallySuppressedIssues></ManuallySuppressedIssues>
   <CurrentIssues>
     <ID>LongMethod:Button.kt$@Suppress("CyclomaticComplexMethod") @OptIn(ExperimentalComposeUiApi::class) @Composable fun Button( text: String? = null, onClick: () -&gt; Unit, buttonStyle: ButtonStyle, fontSize: TextUnit = 16.sp, buttonModifier: Modifier = Modifier, underline: Boolean = false, contentModifier: Modifier = Modifier, enabled: Boolean = true, isSelected: Boolean = false, @DrawableRes leftDrawable: Int? = null, @DrawableRes rightDrawable: Int? = null, leftImageVector: ImageVector? = null, rightImageVector: ImageVector? = null, paddingBetweenIconAndText: Dp = 8.dp, contentDescription: String? = null, label: String? = null, shape: Shape = ButtonDefaults.shape, shadowElevation: Dp? = null, tonalElevation: Dp? = null, iconSize: Dp? = null, tint: Color = Color.Unspecified, tag: String? = null, showSurface: Boolean = true, buttonCustomColor: Color? = null, contentCustomColor: Color? = null, borderCustomColor: BorderStroke? = null, contentPadding: PaddingValues = PaddingValues(0.dp), interactionSource: MutableInteractionSource = remember { MutableInteractionSource() } )</ID>
-    <ID>LongMethod:Shadow.kt$@Composable fun Shadow(modifier: Modifier = Modifier)</ID>
     <ID>TooManyFunctions:Density.kt$com.davcres.template.core.ui.auxiliary.Density.kt</ID>
   </CurrentIssues>
 </SmellBaseline>

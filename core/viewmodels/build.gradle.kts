@@ -36,13 +36,13 @@ dependencies {
     implementation(projects.core.common)
 
     // Core
-    implementation(libs.androidx.core.ktx)
+    implementation(libs.core.ktx)
 
     // Koin
     implementation(libs.koin.core)
 
     // Lifecycle
-    implementation(libs.androidx.lifecycle.viewmodel)
+    implementation(libs.lifecycle.viewmodel)
 
     // Testing
     testImplementation(libs.junit)

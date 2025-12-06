@@ -2,7 +2,6 @@
 <SmellBaseline>
   <ManuallySuppressedIssues></ManuallySuppressedIssues>
   <CurrentIssues>
-    <ID>LongMethod:SwipeScreen.kt$@Composable /** * Interactive top card supporting drag, fling, and dismissal animations. * * @param cardId Stable ID distinguishing animation states across recompositions. * @param imageResId Drawable resource to render. * @param baseScale Target scale after enter animation. * @param baseTranslateY Target Y translation after enter animation. * @param elevation Visual elevation used for shadow rendering. * @param enterFromScale Initial scale for the enter animation. * @param enterFromTranslateY Initial Y offset for the enter animation. * @param baseDx Static horizontal offset to stagger the stack. * @param onDragProgress Callback with a normalized horizontal drag value. * @param onDismiss Invoked with direction (-1 left, 1 right) when card is dismissed. */ private fun SwipeableCard( cardId: Int, @DrawableRes imageResId: Int, baseScale: Float, baseTranslateY: Dp, elevation: Dp, enterFromScale: Float, enterFromTranslateY: Dp, baseDx: Dp, onDragProgress: (Float) -&gt; Unit, onDismiss: (direction: Int) -&gt; Unit, )</ID>
     <ID>UnusedParameter:SwipeScreen.kt$cardKey: Int</ID>
   </CurrentIssues>
 </SmellBaseline>

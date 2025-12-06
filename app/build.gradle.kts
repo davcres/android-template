@@ -73,25 +73,25 @@ dependencies {
     implementation(projects.core.navigation)
 
     // Core
-    implementation(libs.androidx.core.ktx)
+    implementation(libs.core.ktx)
 
     // Koin
     implementation(libs.koin.android)
 
     // Lifecycle
-    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.lifecycle.runtime.ktx)
 
     // Jetpack Compose
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.activity.compose)
+    implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)
-    debugImplementation(libs.androidx.ui.tooling)
+    debugImplementation(libs.ui.tooling)
 
     // Testing
     testImplementation(libs.junit) // Unit testing
-    androidTestImplementation(libs.androidx.junit) // Instrumented testing (on device)
-    androidTestImplementation(libs.androidx.ui.test.junit4) // Compose testing
-    debugImplementation(libs.androidx.ui.test.manifest) // Compose testing (create a mock manifest to run tests in debug)
+    androidTestImplementation(libs.junit.test) // Instrumented testing (on device)
+    androidTestImplementation(libs.ui.test.junit4) // Compose testing
+    debugImplementation(libs.ui.test.manifest) // Compose testing (create a mock manifest to run tests in debug)
 
     // Analytics
     implementation(libs.kotzilla.sdk.compose) // Kotzilla SDK

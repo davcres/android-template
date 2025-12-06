@@ -45,25 +45,24 @@ dependencies {
     implementation(projects.presentation.viewmodels)
 
     // Core
-    implementation(libs.androidx.core.ktx)
+    implementation(libs.core.ktx)
 
     // Koin
     implementation(libs.koin.androidx.compose)
 
     // Jetpack Compose
-    implementation(platform(libs.androidx.compose.bom))
+    implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)
 
     // Navigation
-    implementation(libs.androidx.navigation3.runtime)
-    implementation(libs.androidx.navigation3.ui)
-    implementation(libs.androidx.navigation3.viewmodel)
-    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.bundles.navigation)
+    implementation(libs.kotlinx.serialization.core)
 
     // DataStore
     implementation(libs.datastore.preferences)
+    implementation(libs.navigation3.runtime)
 
     // Testing
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.junit.test)
 }

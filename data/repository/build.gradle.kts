@@ -38,7 +38,7 @@ dependencies {
     implementation(projects.domain.repository)
 
     // Core
-    implementation(libs.androidx.core.ktx)
+    implementation(libs.core.ktx)
 
     // Koin
     implementation(libs.koin.core)

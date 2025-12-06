@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Template</string>
+
+    <string name="bottom_nav_home">Home</string>
+    <string name="bottom_nav_swipe">Swipe</string>
+    <string name="bottom_nav_settings">Settings</string>
+
+    <string name="back">Back</string>
+    <string name="logout">Log out</string>
 </resources>
