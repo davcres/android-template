@@ -41,7 +41,6 @@ dependencies {
     implementation(projects.core.common)
     implementation(projects.core.ui)
     implementation(projects.core.viewmodels)
-    implementation(projects.domain.models)
     implementation(projects.presentation.viewmodels)
 
     // Core

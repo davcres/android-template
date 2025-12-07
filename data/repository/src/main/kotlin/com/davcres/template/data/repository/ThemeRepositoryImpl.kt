@@ -4,8 +4,8 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
-import com.davcres.domain.models.theme.ThemeMode
 import com.davcres.template.core.common.Constants
+import com.davcres.template.core.common.models.ThemeMode
 import com.davcres.template.domain.repository.ThemeRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map

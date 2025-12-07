@@ -69,8 +69,10 @@ android {
 
 dependencies {
     implementation(projects.core.di)
+    implementation(projects.core.ui)
     implementation(projects.core.common)
     implementation(projects.core.navigation)
+    implementation(projects.presentation.viewmodels)
 
     // Core
     implementation(libs.core.ktx)
