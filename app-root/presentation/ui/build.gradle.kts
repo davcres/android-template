@@ -1,10 +1,12 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
-    namespace = "com.davcres.template.shared.domain.repository"
+    namespace = "com.davcres.template.shared.presentation.ui"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
@@ -30,18 +32,36 @@ android {
     kotlinOptions {
         jvmTarget = "21"
     }
+    buildFeatures {
+        compose = true
+    }
 }
 
 dependencies {
     implementation(projects.core.common)
-    implementation(projects.domain.models)
+    implementation(projects.core.ui)
+    implementation(projects.core.viewmodels)
+    implementation(projects.appRoot.presentation.viewmodels)
 
     // Core
     implementation(libs.core.ktx)
 
     // Koin
-    implementation(libs.koin.core)
+    implementation(libs.koin.androidx.compose)
+
+    // Jetpack Compose
+    implementation(platform(libs.compose.bom))
+    implementation(libs.bundles.compose)
+
+    // Navigation
+    implementation(libs.bundles.navigation)
+    implementation(libs.kotlinx.serialization.core)
+
+    // DataStore
+    implementation(libs.datastore.preferences)
+    implementation(libs.navigation3.runtime)
 
     // Testing
     testImplementation(libs.junit)
+    androidTestImplementation(libs.junit.test)
 }

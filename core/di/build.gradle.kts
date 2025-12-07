@@ -34,11 +34,11 @@ android {
 
 dependencies {
     implementation(projects.core.common)
-    implementation(projects.data.datasource)
-    implementation(projects.data.repository)
-    implementation(projects.domain.usecases)
-    implementation(projects.presentation.viewmodels)
-    implementation(projects.presentation.ui)
+    implementation(projects.appRoot.data.datasource)
+    implementation(projects.appRoot.data.repository)
+    implementation(projects.appRoot.domain.usecases)
+    implementation(projects.appRoot.presentation.viewmodels)
+    implementation(projects.appRoot.presentation.ui)
 
     // Core
     implementation(libs.core.ktx)

@@ -1,4 +1,4 @@
-package com.davcres.template.core.navigation
+package com.davcres.template.presentation.ui.navigation
 
 import androidx.compose.animation.ContentTransform
 import androidx.compose.animation.slideInHorizontally
@@ -10,7 +10,6 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import com.davcres.template.presentation.ui.navigation.destinations.RootKey.Login
-import com.davcres.template.presentation.ui.navigation.mainNavigation
 
 @Composable
 fun MainNavigation() {

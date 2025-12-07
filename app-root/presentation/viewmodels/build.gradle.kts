@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.davcres.template.shared.domain.usecases"
+    namespace = "com.davcres.template.shared.presentation.viewmodels"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
@@ -34,14 +34,15 @@ android {
 
 dependencies {
     implementation(projects.core.common)
-    implementation(projects.domain.repository)
-    implementation(projects.domain.models)
+    implementation(projects.core.viewmodels)
+    implementation(projects.appRoot.domain.models)
+    implementation(projects.appRoot.domain.usecases)
 
     // Core
     implementation(libs.core.ktx)
 
     // Koin
-    implementation(libs.koin.core)
+    implementation(libs.koin.android)
 
     // Testing
     testImplementation(libs.junit)

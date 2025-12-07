@@ -45,7 +45,7 @@ android {
 
 dependencies {
     implementation(projects.core.common)
-    implementation(projects.presentation.ui)
+    implementation(projects.appRoot.presentation.ui)
 
     // Core
     implementation(libs.core.ktx)

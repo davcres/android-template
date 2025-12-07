@@ -6,8 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.davcres.template.core.navigation.MainNavigation
 import com.davcres.template.core.ui.theme.TemplateTheme
+import com.davcres.template.presentation.ui.navigation.MainNavigation
 import com.davcres.template.presentation.viewmodels.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

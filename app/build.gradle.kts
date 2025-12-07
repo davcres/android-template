@@ -71,8 +71,8 @@ dependencies {
     implementation(projects.core.di)
     implementation(projects.core.ui)
     implementation(projects.core.common)
-    implementation(projects.core.navigation)
-    implementation(projects.presentation.viewmodels)
+    implementation(projects.appRoot.presentation.ui)
+    implementation(projects.appRoot.presentation.viewmodels)
 
     // Core
     implementation(libs.core.ktx)

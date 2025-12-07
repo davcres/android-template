@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.davcres.template.shared.data.repository"
+    namespace = "com.davcres.template.shared.domain.usecases"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
@@ -34,17 +34,14 @@ android {
 
 dependencies {
     implementation(projects.core.common)
-    implementation(projects.domain.models)
-    implementation(projects.domain.repository)
+    implementation(projects.appRoot.domain.repository)
+    implementation(projects.appRoot.domain.models)
 
     // Core
     implementation(libs.core.ktx)
 
     // Koin
     implementation(libs.koin.core)
-
-    // DataStore
-    implementation(libs.datastore.preferences.core)
 
     // Testing
     testImplementation(libs.junit)
