@@ -1,6 +1,6 @@
 package com.davcres.domain.usecases
 
-import com.davcres.domain.models.theme.ThemeMode
+import com.davcres.template.core.common.models.ThemeMode
 import com.davcres.template.domain.repository.ThemeRepository
 
 class SetThemeUseCase(

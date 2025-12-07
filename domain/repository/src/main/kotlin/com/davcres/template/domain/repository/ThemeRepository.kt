@@ -1,6 +1,6 @@
 package com.davcres.template.domain.repository
 
-import com.davcres.domain.models.theme.ThemeMode
+import com.davcres.template.core.common.models.ThemeMode
 import kotlinx.coroutines.flow.Flow
 
 interface ThemeRepository {
