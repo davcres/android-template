@@ -2,8 +2,9 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.jvm)
 }
 
-kotlin {
-    jvmToolchain(17)
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 dependencies {
