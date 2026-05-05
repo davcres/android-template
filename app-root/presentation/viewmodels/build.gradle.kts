@@ -38,9 +38,6 @@ dependencies {
     implementation(projects.appRoot.domain.models)
     implementation(projects.appRoot.domain.usecases)
 
-    // Core
-    implementation(libs.core.ktx)
-
     // Koin
     implementation(libs.koin.android)
 

@@ -35,9 +35,6 @@ android {
 dependencies {
     implementation(projects.core.common)
 
-    // Core
-    implementation(libs.core.ktx)
-
     // Koin
     implementation(libs.koin.core)
 
