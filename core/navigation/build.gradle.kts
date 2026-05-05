@@ -4,10 +4,11 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
-    namespace = "com.davcres.template.shared.core.navigation"
+    namespace = "com.davcres.template.core.navigation"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
@@ -45,11 +46,11 @@ android {
 
 dependencies {
     implementation(projects.core.common)
-    implementation(projects.presentation.ui)
 
     // Core
     implementation(libs.core.ktx)
 
     // Navigation
     implementation(libs.bundles.navigation)
+    implementation(libs.kotlinx.serialization.core)
 }

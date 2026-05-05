@@ -19,6 +19,9 @@ navigation3 = "1.0.0"
 navigation3-viewmodel = "2.10.0"
 serialization = "1.9.0"
 version-catalog-update = "1.0.0"
+espressoCore = "3.7.0"
+appcompat = "1.7.1"
+material = "1.13.0"
 
 [libraries]
 activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" } # Integration of Jetpack Compose with Android Activity (`setContent {}`).
@@ -46,7 +49,7 @@ ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }           
 ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }                        # Runtime tooling for Compose (Layout Inspector, interactive preview) – use in debug builds.
 ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }        # Lightweight support for `@Preview` annotations in Android Studio.
 ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }            # Provides a manifest for running Compose UI tests in debug.
-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }                # Compose testing framework for UI assertions (`composeTestRule`).
+ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 
 [bundles]
 compose = [
