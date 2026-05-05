@@ -8,61 +8,72 @@ This project is a modern Android **base template**, designed with a focus on sca
 
 The goal of this template is to provide a pre-configured structure with industry best practices, including dependency injection, modern navigation, and strict code quality controls.
 
+> [!IMPORTANT]
+> **Proof of Concept:** This project is a PoC exploring **extreme modularization**. Every single layer (datasource, repository, usecases, etc.) is isolated into its own Gradle module to ensure absolute architectural purity and total isolation.
+> **Trade-off:** This approach results in high Gradle configuration overhead and significantly longer synchronization times. It is intended for educational purposes or extremely large-scale projects where strict boundary enforcement is a priority over build speed.
+
 ---
 
 # Architecture
-### Module and Relationship Diagram
+### Simplified Module and Relationship Diagram
+
+> [!NOTE]
+> For better readability, this diagram has been simplified: the **auth** feature is not shown, and direct dependencies from **:core:di** and **:core:common** to other modules have been omitted to reduce visual clutter.
 
 ```mermaid
 graph TD
-    subgraph App ["Application Level"]
+    subgraph App_Level [Application]
         APP[:app]
     end
 
-    subgraph Features ["Feature Modules"]
-        direction TB
-        subgraph Auth ["auth (Authentication)"]
-            auth_p[:auth:presentation] --> auth_d[:auth:domain]
-            auth_da[:auth:data] --> auth_d
-        end
-
-        subgraph AppRoot ["app-root (Main Feature)"]
-            root_p[:app-root:presentation] --> root_d[:app-root:domain]
-            root_da[:app-root:data] --> root_d
-        end
-    end
-
-    subgraph Core ["Core Level (Shared)"]
-        core_nav[:core:navigation]
+    subgraph Core_Level [Core Level]
         core_di[:core:di]
+        core_nav[:core:navigation]
         core_ui[:core:ui]
-        core_vm[:core:viewmodels]
+        core_vmb[:core:viewmodels]
         core_com[:core:common]
     end
 
-    %% Main Dependency Relationships
-    APP --> Auth
-    APP --> AppRoot
+    subgraph Feature_AppRoot [Feature: app-root]
+        root_ui[:app-root:presentation:ui]
+        root_vm[:app-root:presentation:viewmodels]
+        root_uc[:app-root:domain:usecases]
+        root_repo[:app-root:domain:repository]
+        root_models[:app-root:domain:models]
+        root_data[:app-root:data:repository]
+        root_ds[:app-root:data:datasource]
+    end
+
+    %% APP Dependencies
     APP --> core_di
-    APP --> core_nav
+    APP --> core_ui
+    APP --> root_ui
+    APP --> root_vm
 
-    %% Feature to Core Dependencies
-    Auth --> Core
-    AppRoot --> Core
+    %% App-Root Flow
+    root_ui --> core_ui
+    root_ui --> core_vmb
+    root_ui --> core_nav
+    root_ui --> root_vm
 
-    %% Tools
-    detekt[:detekt-architecture-rules] -.-> APP
-    detekt -.-> Auth
-    detekt -.-> AppRoot
+    root_vm --> core_vmb
+    root_vm --> root_models
+    root_vm --> root_uc
+
+    root_uc --> root_repo
+    root_uc --> root_models
+
+    root_data --> root_models
+    root_data --> root_repo
 ```
 
 ### Structure Summary
 
 * **`:app`**: The main orchestrator. It depends on all features (`auth`, `app-root`) and configures global dependency injection and navigation.
 * **Features (`auth`, `app-root`)**: Each is internally divided following Clean Architecture:
-    * **`:presentation`**: Contains the UI (Compose) and ViewModels. Depends on `:domain`.
-    * **`:data`**: Implements repositories and data sources (API, Database). Depends on `:domain`.
-    * **`:domain`**: The business logic core (UseCases and Models). No external dependencies from higher layers.
+  * **`:presentation`**: Contains the UI (Compose) and ViewModels. Depends on `:domain`.
+  * **`:data`**: Implements repositories and data sources (API, Database). Depends on `:domain`.
+  * **`:domain`**: The business logic core (UseCases and Models). No external dependencies from higher layers.
 * **`:core`**: Contains reusable code for any module (common UI components, navigation utilities, ViewModel base logic, and dependency injection).
 * **`:detekt-architecture-rules`**: Specialized module to ensure architecture rules are met through static analysis.
 
