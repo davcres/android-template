@@ -6,9 +6,9 @@ activityCompose = "1.12.0-alpha08"
 agp = "8.10.1"
 composeBom = "2025.08.01"
 coreKtx = "1.16.0"
+coroutines = "1.8.1"
 datastore = "1.1.1"
 detekt = "1.23.4"
-jetbrainsKotlinJvm = "2.0.21"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 koin = "4.1.0"
@@ -28,6 +28,7 @@ activity-compose = { group = "androidx.activity", name = "activity-compose", ver
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" } # Bill of Materials to align versions across all Compose libraries.
 compose-material3 = { group = "androidx.compose.material3", name = "material3" }           # Jetpack Compose Material 3 components (M3 design system).
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }         # Kotlin extensions for Android framework APIs (concise, idiomatic helpers).
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" } # Coroutines and Flow
 datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" } # DataStore.
 datastore-preferences-core = { group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "datastore" } # DataStore (core, no Android dependencies).
 detekt-api = { module = "io.gitlab.arturbosch.detekt:detekt-api", version.ref = "detekt" }          # To apply custom rules.
@@ -69,7 +70,7 @@ navigation = [
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
