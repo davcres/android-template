@@ -44,9 +44,6 @@ dependencies {
     implementation(projects.core.navigation)
     implementation(projects.appRoot.presentation.viewmodels)
 
-    // Core
-    implementation(libs.core.ktx)
-
     // Koin
     implementation(libs.koin.androidx.compose)
 

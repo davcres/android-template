@@ -47,8 +47,6 @@ android {
 dependencies {
     implementation(projects.core.common)
 
-    // Core
-    implementation(libs.core.ktx)
 
     // Navigation
     implementation(libs.bundles.navigation)
