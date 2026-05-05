@@ -49,9 +49,6 @@ dependencies {
     implementation(projects.auth.presentation.viewmodels)
     implementation(projects.auth.presentation.ui)
 
-    // Core
-    implementation(libs.core.ktx)
-
     // Koin
     implementation(libs.koin.core)
 }
