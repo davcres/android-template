@@ -99,4 +99,10 @@ $ ./gradlew detekt
 ```
 
 # Kotzilla
-Kotzilla is an SDK for monitoring and optimizing performance. You must install the Koin plugin and connect it to your account. The project includes a `kotzilla.sample.json` file where you must add your account credentials.
+Kotzilla is an SDK for monitoring and optimizing performance. To set it up:
+
+1. Locate `app/kotzilla.sample.json`.
+2. Create a copy named `app/kotzilla.json` (this file is ignored by Git to protect your keys).
+3. Replace the placeholder values with your actual account credentials.
+
+For more information, ensure you have the Koin plugin installed and connected to your account.

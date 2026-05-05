@@ -1,11 +1,11 @@
 {
-  "sdkVersion": "1.2.3",
+  "sdkVersion": "X.Y.Z",
   "keys": [
     {
-      "appId": "ea35eb73-7a0d-4939-9dfa-8569a03d1508",
-      "applicationPackageName": "com.davcres.template",
-      "keyId": "019a208b-c43e-7f01-98b3-988950a63f36",
-      "apiKey": "ktz-sdk-6jSiYzTZrnebt89iC42MVBoqLJljv182D_ukz3twGvQ"
+      "appId": "YOUR_APP_ID",
+      "applicationPackageName": "com.your.package",
+      "keyId": "YOUR_KEY_ID",
+      "apiKey": "YOUR_API_KEY"
     }
   ]
 }
