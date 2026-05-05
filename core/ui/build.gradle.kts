@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.davcres.template.shared.core.ui"
+    namespace = "com.davcres.template.core.ui"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {

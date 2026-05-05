@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.davcres.template.shared.domain.usecases"
+    namespace = "com.davcres.template.appRoot.domain.usecases"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {

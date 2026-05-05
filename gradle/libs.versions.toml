@@ -50,9 +50,6 @@ ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }             
 ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }        # Lightweight support for `@Preview` annotations in Android Studio.
 ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }            # Provides a manifest for running Compose UI tests in debug.
 ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }                # Compose testing framework for UI assertions (`composeTestRule`).
 
 [bundles]
 compose = [

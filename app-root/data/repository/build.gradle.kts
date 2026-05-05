@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.davcres.template.shared.data.repository"
+    namespace = "com.davcres.template.appRoot.data.repository"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {

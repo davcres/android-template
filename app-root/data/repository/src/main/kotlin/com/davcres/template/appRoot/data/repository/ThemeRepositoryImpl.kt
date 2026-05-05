@@ -1,0 +1,33 @@
+package com.davcres.template.appRoot.data.repository
+
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.stringPreferencesKey
+import com.davcres.template.appRoot.domain.repository.ThemeRepository
+import com.davcres.template.core.common.Constants
+import com.davcres.template.core.common.models.ThemeMode
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
+
+private val THEME_KEY = stringPreferencesKey(Constants.DataStore.THEME_KEY)
+
+class ThemeRepositoryImpl(
+    private val dataStore: DataStore<Preferences>
+) : ThemeRepository {
+
+    override val themeModeFlow: Flow<ThemeMode> = dataStore.data
+        .map { preferences ->
+            when (preferences[THEME_KEY]) {
+                ThemeMode.DARK.name -> ThemeMode.DARK
+                ThemeMode.LIGHT.name -> ThemeMode.LIGHT
+                else -> ThemeMode.SYSTEM
+            }
+        }
+
+    override suspend fun setThemeMode(theme: ThemeMode) {
+        dataStore.edit { preferences ->
+            preferences[THEME_KEY] = theme.name
+        }
+    }
+}

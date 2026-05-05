@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.davcres.template.shared.data.datasource"
+    namespace = "com.davcres.template.appRoot.data.datasource"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {

@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.davcres.template.shared.presentation.ui"
+    namespace = "com.davcres.template.appRoot.presentation.ui"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
@@ -41,7 +41,9 @@ dependencies {
     implementation(projects.core.common)
     implementation(projects.core.ui)
     implementation(projects.core.viewmodels)
+    implementation(projects.core.navigation)
     implementation(projects.appRoot.presentation.viewmodels)
+    implementation(projects.auth.presentation.ui)
 
     // Core
     implementation(libs.core.ktx)

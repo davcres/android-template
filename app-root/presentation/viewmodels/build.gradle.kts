@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.davcres.template.shared.presentation.viewmodels"
+    namespace = "com.davcres.template.appRoot.presentation.viewmodels"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
