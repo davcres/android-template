@@ -4,6 +4,9 @@
 - 🇬🇧 English (default)
 - 🇪🇸 [Español](README.es.md)
 
+> [!NOTE]
+> **JDK 21** is required to compile this project.
+
 This project is a modern Android **base template**, designed with a focus on scalability, maintainability, and modularization. It uses a robust **multi-module** architecture following **Clean Architecture** principles, allowing for a clear separation of concerns and facilitating teamwork or project growth.
 
 The goal of this template is to provide a pre-configured structure with industry best practices, including dependency injection, modern navigation, and strict code quality controls.

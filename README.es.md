@@ -4,6 +4,9 @@
 - 🇬🇧 [English](README.md)
 - 🇪🇸 Español (actual)
 
+> [!NOTE]
+> Se requiere **JDK 21** para compilar este proyecto.
+
 Este proyecto es una **plantilla base (template)** para aplicaciones Android moderna, diseñada con un enfoque en la escalabilidad, mantenibilidad y modularización. Utiliza una arquitectura **multi-módulo** robusta siguiendo los principios de **Clean Architecture**, permitiendo una separación clara de responsabilidades y facilitando el trabajo en equipo o el crecimiento del proyecto.
 
 El objetivo de esta plantilla es proporcionar una estructura preconfigurada con las mejores prácticas de la industria, incluyendo inyección de dependencias, navegación moderna y estrictos controles de calidad de código.
